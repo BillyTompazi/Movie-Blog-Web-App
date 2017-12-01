@@ -8,7 +8,9 @@ request          = require("request"),
 app              = express();
 
 //App Config
-mongoose.connect("mongodb://localhost/restfull_web_app", {useMongoClient: true});
+//mongoose.connect("mongodb://localhost/restfull_web_app", {useMongoClient: true});
+mongoose.connect("mongodb://Billy:billias@ds127126.mlab.com:27126/movieblog", {useMongoClient: true});
+//mongodb://Billy:billias@ds127126.mlab.com:27126/movieblog
 mongoose.Promise = global.Promise;
 app.use(bodyParser.urlencoded({extented: true}));
 app.use(expressSanitizer());
