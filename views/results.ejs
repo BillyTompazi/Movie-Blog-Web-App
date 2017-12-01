@@ -1,0 +1,38 @@
+<% include ./partials/header %>
+
+<h1>Hello!</h1>
+
+<div class = "ui  text container">
+     <div class="ui top attached segment">
+         <div class="ui divided items">
+             <% data["Search"].forEach(function(movie) { %>
+             <div class="item">
+                <div class="image">
+                    <%  if(movie["Poster"] === "N/A") { %>
+                        <p>There is no poster</p>
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1340&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D">
+                          <% } else { %>
+                              <img src="<%= movie["Poster"] %>">
+                        <% } %>
+                </div>
+                <div class="content">
+                    <div class="description">
+                        <strong><%= movie["Title"] %></strong> - <%= movie["Year"] %>
+                        
+                       <!--<form id="delete" action="/plot" method="GET">
+                <button class="ui red basic button" type="submit" name="id">Read More</button>
+            </form>-->  <a class="ui floated basic  violet button" href="/plot/<%= movie["imdbID"] %>" name="id">
+                        Read More
+                        </a>
+                    </div>
+                </div>
+             </div>
+             <% }) %>
+         </div>
+    </div>
+</div>
+
+<br>
+<a href="/search">Search Again</a>
+
+<% include ./partials/footer %>

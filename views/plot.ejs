@@ -1,0 +1,32 @@
+<% include ./partials/header %>
+
+<h1>Hello!</h1>
+
+<div class = "ui  text container">
+     <div class="ui top attached segment">
+         <div class="ui divided items">
+             
+             <div class="item">
+                <div class="image">
+                    <%  if(data["Poster"] === "N/A") { %>
+                        <p>There is no poster</p>
+                        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?auto=format&fit=crop&w=1340&q=60&ixid=dW5zcGxhc2guY29tOzs7Ozs%3D">
+                          <% } else { %>
+                              <img src="<%= data["Poster"] %>">
+                        <% } %>
+                </div>
+                <div class="content">
+                    <div class="description">
+                        <strong><%= data["Plot"] %></strong> 
+                        <p>Actors: <%= data["Actors"] %></p>
+                   
+                    </div>
+                </div>
+             </div>
+            
+         </div>
+    </div>
+</div>
+
+
+<% include ./partials/footer %>

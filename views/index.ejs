@@ -1,0 +1,32 @@
+<% include ./partials/header %>
+
+<div class = "ui main text container">
+    <div class="ui huge header">Movie Blog</div>
+        <div class="ui top attached segment"><!-- This gives a line box -->
+            <div class="ui divided items">
+                <% movies.forEach(function(movie) { %>
+                    <div class="item">
+                        <div class="image">
+                            <img src="<%= movie.image %>">
+                        </div>
+                        <div class="content">
+                            <a class="header" href="/movies/<%= movie._id %>"><%= movie.title%></a>
+                            <div class="meta">
+                                <span><%= movie.created.toDateString() %></span>
+                            </div>
+                            <div class="description">
+                                <p><%= movie.body.substring(0, 100) %>...</p>
+                            </div>
+                            <div class="extra">
+                                <a class="ui floated basic  violet button"  href="/movies/<%= movie._id %>">
+                                    Read More
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                <% }) %>
+            </div>
+        </div>
+    </div>
+
+<% include ./partials/footer %>
