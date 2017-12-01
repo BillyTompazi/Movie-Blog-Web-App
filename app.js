@@ -7,10 +7,12 @@ rpromise         = require('request-promise'),
 request          = require("request"),
 app              = express();
 
-console.log(process.env.DATABASEURL);
+//console.log(process.env.DATABASEURL);
 
 //App Config
-mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
+var url = process.env.DATABASEURL || "mongodb://localhost/restfull_web_app";
+mongoose.connect(url, {useMongoClient: true});
+//mongoose.connect(process.env.DATABASEURL, {useMongoClient: true});
 //mongoose.connect("mongodb://Billy:billias@ds127126.mlab.com:27126/movieblog", {useMongoClient: true});
 
 mongoose.Promise = global.Promise;
