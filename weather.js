@@ -7,7 +7,7 @@ This the function that i check if the fahrenheit is false(i.e the temp is in Cel
 2 parameters, one for celcius and the other for fahrenheit.
 */
 function displayTemp(celTemp, f) {
-    if(f) return Math.round(celTemp * (1.8 + 32)) + "&#8457;"
+    if(f) return Math.round((celTemp * 1.8) + 32) + "&#8457;"
     return Math.round(celTemp) + "&#8451;";
 }
 /*
